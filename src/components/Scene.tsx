@@ -2,13 +2,15 @@
 
 import { Canvas } from '@react-three/fiber'
 
+import { Camera } from './Camera'
+import { Lights } from './Lights'
+
 const Scene: React.FC = () => {
   return (
-    <Canvas>
-      <perspectiveCamera fov={75} near={0.1} far={100} />
+    <Canvas shadows>
+      <Camera />
 
-      <directionalLight args={['#ffffff', 1]} />
-      <ambientLight args={['#ffffff', 0.5]} />
+      <Lights />
 
       <mesh>
         <sphereGeometry args={[1, 100, 100]} />
